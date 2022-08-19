@@ -20,7 +20,7 @@ Scoring will be counted by the amount of each color the players have, compared t
 2. Create a function to control CPU moves. After player moves, CPU produces a random color to the board.
 
 3. Create a function for controling the scoring.
-    1. Set the color to the corresponding color.
+    1. Set the color to the corresponding point value.
     2. Create an object to contain player "cards" for scoring at the end.
     3. Create a function for counting score.
     4. Determine winner.
@@ -54,7 +54,7 @@ Scoring will be counted by the amount of each color the players have, compared t
 
 4. Drag and drop the players cards to the play field.
 
-######__Challenges__
+###### __Challenges__
 
 1. The overall complexity of the game seems like it will be difficult to organize and design all the logic.
 
