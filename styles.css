@@ -1,0 +1,170 @@
+body {
+    background-color: black;
+}
+
+.title {
+    background-color: silver;
+    height: 120px;
+    border: .5em solid black;
+    text-align: center;
+}
+
+.CPU-score {
+    background-color: silver;
+    height: 12vh;
+    border: .5em solid black;
+    text-align: center;
+}
+
+.field {
+    background-color: silver;
+    height: 24vh;
+    border: .5em solid black;
+    text-align: center;
+}
+
+.cards {
+    background-color: silver;
+    height: 12vh;
+    border: .5em solid black;
+    text-align: center;
+}
+
+.p1-score {
+    background-color: silver;
+    height: 12vh;
+    border: .5em solid black;
+    text-align: center;
+}
+
+.square {
+    background-color: white;
+    width: 5rem;
+    height: 5rem;
+    margin: 2em;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.title {
+    background-color: yellow;
+    height: 16.6vh;
+}
+
+.CPU-score {
+    background-color: blue;
+    height: 16.6vh;
+}
+
+.field {
+    background-color: red;
+    height: 33.2vh;
+}
+
+.card-container {
+    background-color: green;
+    height: 16.6vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cards {
+    background-color: white;
+    width: 10rem;
+    height: 10rem;
+    margin: 10px;
+} */
+
+/* .square {
+
+} */
+
+
+/* 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+    grid-gap: 1.5rem;
+    background-color: black;
+}
+
+.title {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: antiquewhite;
+}
+
+.CPU-score {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: antiquewhite;
+}
+
+.field {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: antiquewhite;
+}
+
+.cards{
+    grid-row-start: 5;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: antiquewhite;
+}
+
+.p1-score {
+    grid-row-start: 6;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    background-color: antiquewhite;
+} */
