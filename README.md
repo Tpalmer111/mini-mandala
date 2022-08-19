@@ -92,14 +92,14 @@ You start the game with a hand of six cards and the central playing mat, display
 
 ## __To Do__
 
-- [x] Write basic HTML page.
-- [x] Write necessary CSS page.
-- [ ] Write a list of variables to start with.
+- [X] Write basic HTML page.
+- [X] Write necessary CSS page.
+- [X] Write a list of variables to start with.
 - [ ] Write a list of eventListeners to identify click events.
     - [ ] Click event for player turn selection.
     - [ ] Click event for player field selection.
     - [ ] Click event to clear the board and start a new game.
-- [ ] Write a function (colorPicker) to choose a random color.
+- [X] Write a function (colorPicker) to choose a random color.
 - [ ] Write a function (CPUMove) to place a random card for the CPU.
 - [ ] Write a funtion (CPUChoice) to make the CPU choose the highest value color from the field.
 - [ ] Write a function (tallyScore) that tallies the totals of each color for each player.
