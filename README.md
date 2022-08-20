@@ -107,7 +107,7 @@ You start the game with a hand of six cards and the central playing mat, display
 - [X] Write necessary CSS page.
 - [X] Write a list of variables to start with.
 - [ ] Write a list of eventListeners to identify click events.
-    - [ ] Click event for player turn selection.
+    - [X] Click event for player turn selection.
     - [ ] Click event for player field selection.
     - [ ] Click event to clear the board and start a new game.
 - [X] Write a function (colorPicker) to choose a random color.

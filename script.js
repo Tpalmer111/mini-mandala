@@ -57,6 +57,23 @@ colorFillTwo()
 colorFillThree()
 colorFillFour()
 
+const CPUMove = () => {
+    let CPUColor = colorPicker()
+    if (CPUColor == "red") {
+        redTally++
+        redBox.innerText = redTally
+    } else if (CPUColor == "blue") {
+        blueTally++
+        blueBox.innerText = blueTally
+    } else if (CPUColor == "green"){
+        greenTally++
+        greenBox.innerText = greenTally
+    } else if (CPUColor = "yellow") {
+        yellowTally++
+        yellowBox.innerText = yellowTally
+    }
+}
+
 cardOne.addEventListener("click", () => {
     let currentColor = cardOne.style.backgroundColor
     if (currentColor == "red") {
@@ -72,13 +89,11 @@ cardOne.addEventListener("click", () => {
         yellowTally++
         yellowBox.innerText = yellowTally
     }
-
+    
+    CPUMove()
+    
     colorFillOne()
 
-    console.log("red = " + redTally)
-    console.log("blue = " + blueTally)
-    console.log("green + " + greenTally)
-    console.log("yellow = " + yellowTally)
 
     
 
@@ -100,11 +115,9 @@ cardTwo.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
 
-    console.log("red = " + redTally)
-    console.log("blue = " + blueTally)
-    console.log("green = " + greenTally)
-    console.log("yellow = " + yellowTally)
-    
+  
+    CPUMove()
+
     colorFillTwo()
 })
 
@@ -124,10 +137,7 @@ cardThree.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
     
-    console.log("red = " + redTally)
-    console.log("blue = " + blueTally)
-    console.log("green + " + greenTally)
-    console.log("yellow = " + yellowTally)
+    CPUMove()
 
     colorFillThree()
 })
@@ -148,10 +158,7 @@ cardFour.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
   
-    console.log("red = " + redTally)
-    console.log("blue = " + blueTally)
-    console.log("green + " + greenTally)
-    console.log("yellow = " + yellowTally)
+    CPUMove()
 
     colorFillFour()
 
@@ -166,3 +173,7 @@ cardFour.addEventListener("click", () => {
 
 
 
+    // console.log("red = " + redTally)
+    // console.log("blue = " + blueTally)
+    // console.log("green + " + greenTally)
+    // console.log("yellow = " + yellowTally)

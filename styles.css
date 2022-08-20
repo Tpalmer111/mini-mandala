@@ -14,6 +14,7 @@ body {
     height: 12vh;
     border: .5em solid black;
     text-align: center;
+    font-size: x-large;
 }
 
 .field {
@@ -21,6 +22,7 @@ body {
     height: 24vh;
     border: .5em solid black;
     text-align: center;
+    font-size: x-large;
 }
 
 .cards {
@@ -35,6 +37,7 @@ body {
     height: 12vh;
     border: .5em solid black;
     text-align: center;
+    font-size: x-large;
 }
 
 .square {
