@@ -1,17 +1,18 @@
 console.log("Hello, from inside mini-mandala")
 
-const compScoreBoard = document.querySelector(".CPU-score")
-const fieldDiv = document.querySelector(".field")
-const cardOne = document.querySelector(".card-one")
-const cardTwo = document.querySelector(".card-two")
-const cardThree = document.querySelector(".card-three")
-const cardFour = document.querySelector(".card-four")
-const playerScoreBoard = document.querySelector(".p1-score")
+addEventListener("DOMContentLoaded", () => {
+    const compScoreBoard = document.querySelector(".CPU-score")
+    const fieldDiv = document.querySelector(".field")
+    const cardOne = document.querySelector(".card-one")
+    const cardTwo = document.querySelector(".card-two")
+    const cardThree = document.querySelector(".card-three")
+    const cardFour = document.querySelector(".card-four")
+    const playerScoreBoard = document.querySelector(".p1-score")
 
 
-
+//This function randomly selects a color between "red, blue, green, and yellow"
 const colorPicker = () => {
-    let num = Math.floor(Math.random() * 3)
+    let num = Math.floor(Math.random() * 4)
     if (num == 0) {
         return "red"
     } else if (num == 1) {
@@ -23,23 +24,40 @@ const colorPicker = () => {
     }
 }
 
-
-
  console.log(colorPicker())
 
-// function colorPicker() {
-//     let number = numPicker()
-//     let cardColor = ""
-//     if (number === 0) {
-//         cardColor = "red"
-//     } else if (number === 1) {
-//         cardColor = "blue"
-//     } else if (number === 2) {
-//         cardColor = "green"
-//     } else if (number === 3) {
-//         cardColor = "yellow"
-//     }
-//     return cardColor
-// }
+ const colorFillOne = () => {
+    document.querySelector("#card-one").style.backgroundColor = colorPicker()
+}
 
-//console.log(colorPicker)
+const colorFillTwo = () => {
+    document.querySelector("#card-two").style.backgroundColor = colorPicker()
+}
+
+const colorFillThree = () => {
+    document.querySelector("#card-three").style.backgroundColor = colorPicker()
+}
+
+const colorFillFour = () => {
+    document.querySelector("#card-four").style.backgroundColor = colorPicker()
+}
+
+
+
+colorFillOne()
+colorFillTwo()
+colorFillThree()
+colorFillFour()
+
+})
+
+
+
+
+//  const pixels = document.querySelectorAll(".pixel")
+//  pixels.forEach(pixel => {
+//  pixel.addEventListener("mouseenter", () => {
+//  pixel.style.backgroundColor = "black"
+// })
+
+

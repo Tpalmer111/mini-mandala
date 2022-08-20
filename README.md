@@ -2,6 +2,8 @@
 
 Color coded card game of art, skill and chance.
 
+
+
 ## __Game Outline__
 
 The goal of mini-mandala is to get the high score. The player and the CPU work together to create a "mandala' in the center of the screen by placing various colored cards in the play field in turn order. The player may chose between four cards, the cards will be random and either red, green, blue, and yellow (duplicates are possible). Play continues until all four colors have been played, then the field is cleared.
@@ -11,6 +13,8 @@ To clear the field, the last player to place a card choses a color and takes the
 Scoring will be counted by the amount of each of the color cards the players have, compared to the values on their individual scoreboard. The order of the colors determines the value of that color for that player. The first color taken by the player will represent the "1 pt" value, the second color card represents the "2 pt" value, the third "3 pt", and the fourth "4 pt".
 
 When either player has acquiered a fourth color on their scoreboard, the endgame is triggered. then all the cards each player has is tallied and a winner is declared.
+
+
 
 ## __Page Design__
 
@@ -61,11 +65,15 @@ When either player has acquiered a fourth color on their scoreboard, the endgame
 
 4. Drag and drop the players cards to the play field.
 
+
+
 ## __Challenges__
 
 1. The overall complexity of the game seems like it will be difficult to organize and design all the logic.
 
 2. Scoring is going to be a big challenge.
+
+
 
 ## __Tech Stack__
 
@@ -74,6 +82,8 @@ When either player has acquiered a fourth color on their scoreboard, the endgame
 2. javaScript
 
 3. (stretch goal) Explore other syling options
+
+
 
 ## Inspiration:
 
@@ -88,6 +98,7 @@ With a slow and steady movement from your wrist, you cautiously pour the last re
 Mandala from Trevor Benjamin & Brett J. Gilbert is not quite as spiritual. This tactical 2 player game lets players from 10 and up compete in the creation of Mandalas. In about 30 minutes several Mandalas are created and destroyed and the players try to earn as many victory points in this process as possible by collecting the different colors their abstract Mandalas are made of. Who will earn the most points? Who will be the master of Mandalas?
 
 You start the game with a hand of six cards and the central playing mat, displaying two Mandalas and a River and Cup for each player. The Mandalas are separated into three areas, the Mountain area in the middle and the two player areas on their respective sides. On your turn you can choose from three actions: Either you play exactly one card into the Mountain area of one of the Mandalas and draw up to three new cards, or you play any amount of cards of exactly one color in your personal player area. Using one of these two actions, you have to follow the Rule of Color! This rule states, that in a Mandala each color may only be found in exactly one area. In other words: if red is already located in the Mountain area, you can not play red cards into your player area (but you could play a red card into the Mountain area). As a third action you can choose to not play any card into a Mandala at all, but instead put any number of cards of the same color onto the discard pile and draw exactly the same amount of cards you discarded. After you finished your turn, you check if a Mandala has been finished. This means: all six colors of the game are represented in that Mandala. If thats the case, the ceremony of destruction happens. Beginning with the player who has more cards in their player area, that player choose one color from the Mountain area, takes all cards of that color and adds them to their River and Cup. The position of the color in your River determines how much victory points the cards of the same color in your Cup are worth for you at the end of the game. The game ends either when the draw pile is used up or one player has all six colors of the game added to their River.
+
 
 
 ## __To Do__
