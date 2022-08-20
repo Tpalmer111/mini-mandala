@@ -11,6 +11,11 @@ addEventListener("DOMContentLoaded", () => {
     const blueBox = document.querySelector("#blue-box")
     const greenBox = document.querySelector("#green-box")
     const yellowBox = document.querySelector("#yellow-box")
+    const CPUredBox = document.querySelector("#CPUred-box")
+    const CPUblueBox = document.querySelector("#CPUblue-box")
+    const CPUgreenBox = document.querySelector("#CPUgreen-box")
+    const CPUyellowBox = document.querySelector("#CPUyellow-box")
+
     const playerScoreBoard = document.querySelector(".p1-score")
 
 
@@ -51,6 +56,11 @@ let blueTally = 0
 let greenTally = 0
 let yellowTally = 0
 
+let CPUredTally = 0
+let CPUblueTally = 0
+let CPUgreenTally = 0
+let CPUyellowTally = 0
+
 
 colorFillOne()
 colorFillTwo()
@@ -60,17 +70,17 @@ colorFillFour()
 const CPUMove = () => {
     let CPUColor = colorPicker()
     if (CPUColor == "red") {
-        redTally++
-        redBox.innerText = redTally
+        CPUredTally++
+        CPUredBox.innerText = CPUredTally
     } else if (CPUColor == "blue") {
-        blueTally++
-        blueBox.innerText = blueTally
+        CPUblueTally++
+        CPUblueBox.innerText = CPUblueTally
     } else if (CPUColor == "green"){
-        greenTally++
-        greenBox.innerText = greenTally
+        CPUgreenTally++
+        CPUgreenBox.innerText = CPUgreenTally
     } else if (CPUColor = "yellow") {
-        yellowTally++
-        yellowBox.innerText = yellowTally
+        CPUyellowTally++
+        CPUyellowBox.innerText = CPUyellowTally
     }
 }
 
@@ -90,12 +100,8 @@ cardOne.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
     
-    CPUMove()
-    
     colorFillOne()
-
-
-    
+    CPUMove()    
 
 })
 
@@ -115,10 +121,8 @@ cardTwo.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
 
-  
-    CPUMove()
-
     colorFillTwo()
+    CPUMove()
 })
 
 cardThree.addEventListener("click", () => {
@@ -137,9 +141,8 @@ cardThree.addEventListener("click", () => {
         yellowBox.innerText = yellowTally
     }
     
-    CPUMove()
-
     colorFillThree()
+    CPUMove()
 })
 
 cardFour.addEventListener("click", () => {
@@ -157,23 +160,25 @@ cardFour.addEventListener("click", () => {
         yellowTally++
         yellowBox.innerText = yellowTally
     }
-  
-    CPUMove()
 
     colorFillFour()
-
-
-})
-
-
+    CPUMove()
 
 })
 
 
+// const calcTallyTotals = () => {
+//     let totalRed = 0
+//     let totalBlue = 0
+//     let totalGreen = 0
+//     let totalYellow = 0
+//     totalRed = (redTally + CPUredTally)
+//     totalBlue = (blueTally + CPUblueTally)
+//     totalGreen = (greenTally + CPUgreenTally)
+//     totalYellow = (yellowTally + CPUyellowTally)
+//     return totalRed, totalBlue, totalGreen, totalYellow
+// }
 
+// console.log(calcTallyTotals())
 
-
-    // console.log("red = " + redTally)
-    // console.log("blue = " + blueTally)
-    // console.log("green + " + greenTally)
-    // console.log("yellow = " + yellowTally)
+})
