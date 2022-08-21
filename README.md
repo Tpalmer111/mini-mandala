@@ -109,9 +109,14 @@ You start the game with a hand of six cards and the central playing mat, display
 - [ ] Write a list of eventListeners to identify click events.
     - [X] Click event for player turn selection.
     - [ ] Click event for player field selection.
-    - [ ] Click event to clear the board and start a new game.
+    - [ ] Click to clear the board and start a new game.
+- [ ] Create funtion for selecting colors during clear phase.
+    - [X] Disable player cards.
+    - [ ] Enable event listeners for selection cards in field.
+    - [ ] Reset field tallys.
+    - [ ] Disable field and enable player cards.
 - [X] Write a function (colorPicker) to choose a random color.
-- [ ] Write a function (CPUMove) to place a random card for the CPU.
+- [X] Write a function (CPUMove) to place a random card for the CPU.
 - [ ] Write a funtion (CPUChoice) to make the CPU choose the highest value color from the field.
 - [ ] Write a function (tallyScore) that tallies the totals of each color for each player.
 - [ ] Write a function (colorScore) that collects the order of the colors taken by each player and applies the correct value

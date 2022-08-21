@@ -33,8 +33,6 @@ const colorPicker = () => {
     }
 }
 
- console.log(colorPicker())
-
  const colorFillOne = () => {
     document.querySelector("#card-one").style.backgroundColor = colorPicker()
 }
@@ -61,6 +59,7 @@ let CPUblueTally = 0
 let CPUgreenTally = 0
 let CPUyellowTally = 0
 
+let playable = true
 
 colorFillOne()
 colorFillTwo()
@@ -69,113 +68,76 @@ colorFillFour()
 
 const CPUMove = () => {
     let CPUColor = colorPicker()
-    if (CPUColor == "red") {
-        CPUredTally++
-        CPUredBox.innerText = CPUredTally
-        console.log(calcRedTotal())
-    } else if (CPUColor == "blue") {
-        CPUblueTally++
-        CPUblueBox.innerText = CPUblueTally
-    } else if (CPUColor == "green"){
-        CPUgreenTally++
-        CPUgreenBox.innerText = CPUgreenTally
-    } else if (CPUColor = "yellow") {
-        CPUyellowTally++
-        CPUyellowBox.innerText = CPUyellowTally
-    }
+    switch(CPUColor) {
+        case "red":
+            CPUredTally++
+            CPUredBox.innerText = CPUredTally
+            break
+        case "blue":
+            CPUblueTally++
+            CPUblueBox.innerText = CPUblueTally
+            break
+        case "green":
+            CPUgreenTally++
+            CPUgreenBox.innerText = CPUgreenTally
+            break
+        case "yellow":
+            CPUyellowTally++
+            CPUyellowBox.innerText = CPUyellowTally
+            break
+    }  
+    detectClearPhaseCPU()
 }
 
-cardOne.addEventListener("click", () => {
-    let currentColor = cardOne.style.backgroundColor
-    if (currentColor == "red") {
-        redTally++
-        redBox.innerText = redTally
-        console.log(calcRedTotal())
-    } else if (currentColor == "blue") {
-        blueTally++
-        blueBox.innerText = blueTally
-    } else if (currentColor == "green"){
-        greenTally++
-        greenBox.innerText = greenTally
-    } else if (currentColor = "yellow") {
-        yellowTally++
-        yellowBox.innerText = yellowTally
+const playerMove = (e) => {
+    if (!playable) {
+        return 
     }
+    let currentColor = e.srcElement.style.backgroundColor
+    switch(currentColor) {
+        case "red":
+            redTally++
+            redBox.innerText = redTally
+            break
+        case "blue":
+            blueTally++
+            blueBox.innerText = blueTally
+            break
+        case "green":
+            greenTally++
+            greenBox.innerText = greenTally
+            break
+        case "yellow":
+            yellowTally++
+            yellowBox.innerText = yellowTally
+            break
+    }
+
+    switch(e.srcElement.id) {
+        case "card-one":
+            colorFillOne()
+            break
+        case "card-two":
+            colorFillTwo()
+            break
+        case "card-three":
+            colorFillThree()
+            break
+        case "card-four":
+            colorFillFour()
+            break
+
+    }
+    detectClearPhase()
+}
+
+cardOne.addEventListener("click", playerMove) 
+
+cardTwo.addEventListener("click", playerMove)
     
-    colorFillOne()
-    console.log(detectClearPhase())//run calculations function
-    CPUMove()    
+cardThree.addEventListener("click", playerMove)
 
-})
-
-cardTwo.addEventListener("click", () => {
-    let currentColor = cardTwo.style.backgroundColor
-    if (currentColor == "red") {
-        redTally++
-        redBox.innerText = redTally
-        console.log(calcRedTotal())
-    } else if (currentColor == "blue") {
-        blueTally++
-        blueBox.innerText = blueTally
-    } else if (currentColor == "green"){
-        greenTally++
-        greenBox.innerText = greenTally
-    } else if (currentColor = "yellow") {
-        yellowTally++
-        yellowBox.innerText = yellowTally
-    }
-
-    colorFillTwo()
-    //run calculations function
-    CPUMove()
-})
-
-cardThree.addEventListener("click", () => {
-    let currentColor = cardThree.style.backgroundColor
-    if (currentColor == "red") {
-        redTally++
-        redBox.innerText = redTally
-    } else if (currentColor == "blue") {
-        blueTally++
-        blueBox.innerText = blueTally
-    } else if (currentColor == "green"){
-        greenTally++
-        greenBox.innerText = greenTally
-        console.log()
-    } else if (currentColor = "yellow") {
-        yellowTally++
-        yellowBox.innerText = yellowTally
-    }
-    
-    colorFillThree()
-    //run calculations function
-    CPUMove()
-    
-   
-})
-
-cardFour.addEventListener("click", () => {
-    let currentColor = cardFour.style.backgroundColor
-    if (currentColor == "red") {
-        redTally++
-        redBox.innerText = redTally
-        console.log(calcRedTotal())
-    } else if (currentColor == "blue") {
-        blueTally++
-        blueBox.innerText = blueTally
-    } else if (currentColor == "green"){
-        greenTally++
-        greenBox.innerText = greenTally
-    } else if (currentColor = "yellow") {
-        yellowTally++
-        yellowBox.innerText = yellowTally
-    }
-
-    colorFillFour()
-    //run calculations function
-    CPUMove()
-
-})
+cardFour.addEventListener("click", playerMove)
 
 const calcRedTotal = () => {
     let x = redTally
@@ -209,11 +171,37 @@ const calcYellowTotal = () => {
 const detectClearPhase = () => {
 
     if (calcRedTotal() >= 2 && calcBlueTotal() >= 2 && calcGreenTotal() >= 2 && calcYellowTotal() >= 2) {
-        return true
+        clearPhasePlr()
+    } else {
+        CPUMove()
+        return false
+    }
+
+}
+
+const detectClearPhaseCPU = () => {
+
+    if (calcRedTotal() >= 2 && calcBlueTotal() >= 2 && calcGreenTotal() >= 2 && calcYellowTotal() >= 2) {
+        clearPhaseCPU()
     } else {
         return false
     }
 
+}
+
+const disableCards = () => {
+    playable = false
+    // let cards = document.getElementsByClassName("cards")
+    // cards.forEach((card) => {})
+}
+
+const clearPhasePlr = () => {
+    disableCards()
+
+}
+
+const clearPhaseCPU = () => {
+    disableCards()
 }
 
 })
