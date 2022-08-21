@@ -72,6 +72,7 @@ const CPUMove = () => {
     if (CPUColor == "red") {
         CPUredTally++
         CPUredBox.innerText = CPUredTally
+        console.log(calcRedTotal())
     } else if (CPUColor == "blue") {
         CPUblueTally++
         CPUblueBox.innerText = CPUblueTally
@@ -89,6 +90,7 @@ cardOne.addEventListener("click", () => {
     if (currentColor == "red") {
         redTally++
         redBox.innerText = redTally
+        console.log(calcRedTotal())
     } else if (currentColor == "blue") {
         blueTally++
         blueBox.innerText = blueTally
@@ -101,6 +103,7 @@ cardOne.addEventListener("click", () => {
     }
     
     colorFillOne()
+    console.log(detectClearPhase())//run calculations function
     CPUMove()    
 
 })
@@ -110,6 +113,7 @@ cardTwo.addEventListener("click", () => {
     if (currentColor == "red") {
         redTally++
         redBox.innerText = redTally
+        console.log(calcRedTotal())
     } else if (currentColor == "blue") {
         blueTally++
         blueBox.innerText = blueTally
@@ -122,6 +126,7 @@ cardTwo.addEventListener("click", () => {
     }
 
     colorFillTwo()
+    //run calculations function
     CPUMove()
 })
 
@@ -136,13 +141,17 @@ cardThree.addEventListener("click", () => {
     } else if (currentColor == "green"){
         greenTally++
         greenBox.innerText = greenTally
+        console.log()
     } else if (currentColor = "yellow") {
         yellowTally++
         yellowBox.innerText = yellowTally
     }
     
     colorFillThree()
+    //run calculations function
     CPUMove()
+    
+   
 })
 
 cardFour.addEventListener("click", () => {
@@ -150,6 +159,7 @@ cardFour.addEventListener("click", () => {
     if (currentColor == "red") {
         redTally++
         redBox.innerText = redTally
+        console.log(calcRedTotal())
     } else if (currentColor == "blue") {
         blueTally++
         blueBox.innerText = blueTally
@@ -162,23 +172,50 @@ cardFour.addEventListener("click", () => {
     }
 
     colorFillFour()
+    //run calculations function
     CPUMove()
 
 })
 
+const calcRedTotal = () => {
+    let x = redTally
+    let y = CPUredTally
+    let totalRed = (x + y)
+    return totalRed
+}
 
-// const calcTallyTotals = () => {
-//     let totalRed = 0
-//     let totalBlue = 0
-//     let totalGreen = 0
-//     let totalYellow = 0
-//     totalRed = (redTally + CPUredTally)
-//     totalBlue = (blueTally + CPUblueTally)
-//     totalGreen = (greenTally + CPUgreenTally)
-//     totalYellow = (yellowTally + CPUyellowTally)
-//     return totalRed, totalBlue, totalGreen, totalYellow
-// }
+const calcBlueTotal = () => {
+    let x = blueTally
+    let y= CPUblueTally
+    let totalBlue = (x + y)
+    return totalBlue 
+}
 
-// console.log(calcTallyTotals())
+const calcGreenTotal = () => {
+    let x = greenTally
+    let y= CPUgreenTally
+    let totalGreen = (x + y)
+    return totalGreen 
+}
+
+
+const calcYellowTotal = () => {
+    let x = yellowTally
+    let y= CPUyellowTally
+    let totalYellow = (x + y)
+    return totalYellow 
+}
+
+const detectClearPhase = () => {
+
+    if (calcRedTotal() >= 2 && calcBlueTotal() >= 2 && calcGreenTotal() >= 2 && calcYellowTotal() >= 2) {
+        return true
+    } else {
+        return false
+    }
+
+}
 
 })
+
+
