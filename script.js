@@ -79,35 +79,16 @@ let CPUyellowTally = 0
 // variable that stops cards click function during clear phase. 
 let playable = true
 
-// callng the functions for intial set of player cards. 
-colorFillOne()
-colorFillTwo()
-colorFillThree()
-colorFillFour()
-
-// function that controls CPU turns.
-const CPUMove = () => {
-    let CPUColor = colorPicker()
-    switch(CPUColor) {
-        case "red":
-            CPUredTally++
-            CPUredBox.innerText = CPUredTally
-            break
-        case "blue":
-            CPUblueTally++
-            CPUblueBox.innerText = CPUblueTally
-            break
-        case "green":
-            CPUgreenTally++
-            CPUgreenBox.innerText = CPUgreenTally
-            break
-        case "yellow":
-            CPUyellowTally++
-            CPUyellowBox.innerText = CPUyellowTally
-            break
-    }  
-    detectClearPhaseCPU()
+// function callng the functions for intial set of player cards. 
+const cardsRefresh = () => {
+    colorFillOne()
+    colorFillTwo()
+    colorFillThree()
+    colorFillFour()
 }
+
+// original loading of player cards
+cardsRefresh()
 
 // function that controls player turns.
 const playerMove = (e) => {
@@ -160,6 +141,31 @@ cardTwo.addEventListener("click", playerMove)
 cardThree.addEventListener("click", playerMove)
 
 cardFour.addEventListener("click", playerMove)
+
+
+// function that controls CPU turns.
+const CPUMove = () => {
+    let CPUColor = colorPicker()
+    switch(CPUColor) {
+        case "red":
+            CPUredTally++
+            CPUredBox.innerText = CPUredTally
+            break
+        case "blue":
+            CPUblueTally++
+            CPUblueBox.innerText = CPUblueTally
+            break
+        case "green":
+            CPUgreenTally++
+            CPUgreenBox.innerText = CPUgreenTally
+            break
+        case "yellow":
+            CPUyellowTally++
+            CPUyellowBox.innerText = CPUyellowTally
+            break
+    }  
+    detectClearPhaseCPU()
+}
 
 // functions for tracking cards played in the field.
 const calcRedTotal = () => {
@@ -254,37 +260,80 @@ let playerOneBlue = []
 let playerOneGreen = []
 let playerOneYellow = []
 
-// function to make colors in field area clickable.
+let fieldEmpty = false
+let rEmpty = false
+let bEmpty = false
+let gEmpty = false
+let yEmpty = false
+
+// function to make colors in field area clickable, un-clickable, and .
 const fieldReady = () => {
-    // if (!playable) {
+
         redBox.addEventListener("click", function(e) {
-            let newScore = calcRedTotal()
-            playerOneRed.push("red")
+            redBox.removeEventListener("click", () => {
+            rEmpty = true
+            let r = calcRedTotal()
+            playerOneRed.push("red").repeat(r)
             scoreColor = "red"
             buildScoreSheet()
+            redTally = 0
+            CPUredTally = 0
             CPUScore()
-        }) 
+        })
+        })
+
         blueBox.addEventListener("click", function(e) {
-            let newScore = calcBlueTotal()
-            playerOneBlue.push("blue")
+            blueBox.removeEventListener("click", () => {
+            bEmpty = true
+            let b = calcBlueTotal()
+            playerOneBlue.push("blue").repeat(b)
+            scoreColor = "blue"
             buildScoreSheet()
+            blueTally = 0
+            CPUblueTally = 0
             CPUScore()
         })
+        })
+
         greenBox.addEventListener("click", function(e) {
-            let newScore = calcGreenTotal()
-            playerOneGreen.push("green")
+            greenBox.removeEventListener("click", () => {
+            gEmpty = true
+            let g = calcGreenTotal()
+            playerOneGreen.push("green").repeat(g)
+            scoreColor = "green"
             buildScoreSheet()
+            greenTally = 0
+            CPUgreenTally = 0
             CPUScore()
         })
+        })
+
         yellowBox.addEventListener("click", function(e) {
-            let newScore = calcYellowTotal()
-            playerOneYellow.push("yellow")
+            yellowBox.removeEventListener("click", () => {
+            yEmpty = true
+            let y = calcYellowTotal()
+            playerOneYellow.push("yellow").repeat(y)
+            scoreColor = "yellow"
             buildScoreSheet()
+            yellowTally = 0
+            CPUyellowTally = 0
             CPUScore()
         })
+        })
+
+        if (rEmpty == true && bEmpty == true && gEmpty == true && yEmpty == true) {
+            fieldEmpty = true
+            resumePlay()
+        }
+        
     }
-    
-//}
+
+const resumePlay = () => {
+    if (fieldEmpty == true) {
+        playable = true
+        cardsRefresh()
+    }
+}
 
 let CPURed = []
 let CPUBlue = []
@@ -292,31 +341,55 @@ let CPUGreen = []
 let CPUYellow = []
 
 const CPUScore = () => {
-    let r = calcRedTotal
-    let b = calcBlueTotal
-    let g = calcGreenTotal
-    let y = calcYellowTotal 
+    let r = calcRedTotal()
+    let b = calcBlueTotal()
+    let g = calcGreenTotal()
+    let y = calcYellowTotal() 
     if (r >= b && r >= g && r >= y) {
-        CPURed.push("red")
+        redBox.removeEventListener("click", () => {
+        CPURed.push("red").repeat(r)
         scoreColor = "red"
         buildScoreSheetCPU()
+        redTally = 0
+        CPUredTally = 0
+        rEmpty = true
+        })
     } else if (b >= r && b >= g && b >= y) {
-        CPUBlue.push("blue")
+        blueBox.removeEventListener("click", () => {
+        CPUBlue.push("blue").repeat(b)
         scoreColor = "blue"
         buildScoreSheetCPU()
+        blueTally = 0
+        CPUblueTally = 0
+        bEmpty = true
+    })
     } else if (g >= r && g >= b && g >= y) {
-        CPUGreen.push("green")
+        greenBox.removeEventListener("click", () => {
+        CPUGreen.push("green").repeat(g)
         scoreColor = "green"
         buildScoreSheetCPU()
+        greenTally = 0
+        CPUgreenTally = 0
+        gEmpty = true
+    })
     } else if (y >= r && y >= b && y>= g) {
-        CPUYellow.push("yellow")
+        yellowBox.removeEventListener("click", () => {
+        CPUYellow.push("yellow").repeat(y)
         scoreColor = "yellow"
         buildScoreSheetCPU()
+        yellowTally = 0
+        CPUyellowTally = 0
+        yEmpty = true
+    })
+    } else {
+        CPUEndTrigger = true
     }
 
 }
 
 let scoreColor = ""
+let endTrigger = false
+let CPUEndTrigger = false
 
 const buildScoreSheet = () => {
 
@@ -329,7 +402,7 @@ const buildScoreSheet = () => {
     } else if (p1FourPoint.style.backgroundColor == "white") {
         p1FourPoint.style.backgroundColor = scoreColor
     } else { 
-        endGameTrigger()
+        endTrigger = true
         } 
     
     }
@@ -345,17 +418,153 @@ const buildScoreSheet = () => {
         } else if (CPUFourPoint.style.backgroundColor == "white") {
             CPUFourPoint.style.backgroundColor = scoreColor
         } else {
-            endGameTrigger()
+            CPUEndTrigger = true
+            endGame()
         } 
         
         }
 
 // function to trigger end game.
-const endGameTrigger = () => {
-    // this function needs to tally final score, display scores and delcare a winner 
-    console.log("I just don't know anymore..." + playerOneRed)
-    endScore()
+const endGame = () => {
+    // this function needs to tally final score, display scores and delcare a winner
+    if (CPUEndTrigger == false || endTrigger == false) {
+        return false
+    } else if (CPUEndTrigger == true && endTrigger == true) {
+        calcScore()
+        calcCPUScore()
+    }
+    
 }
+
+let p1Points = 0
+let CPUPoints = 0
+
+const calcScore = () => {
+    let z = playerOneRed.length
+    let y = playerOneBlue.length
+    let x = playerOneGreen.length
+    let w = playerOneYellow.length
+
+    switch(p1OnePoint.style.backgroundColor) {
+        case "red":
+            p1Points += z
+            break
+        case "blue":
+            p1Points += y
+            break
+        case "green": 
+            p1Points += x
+            break
+        case "yellow":
+            p1Points += w
+    }
+
+    switch(p1TwoPoint.style.backgroundColor) {
+        case "red":
+            p1Points += (z * 2)
+            break
+        case "blue":
+            p1Points += (y * 2)
+            break
+        case "green": 
+            p1Points += (x * 2)
+            break
+        case "yellow":
+            p1Points += (w * 2)
+    }
+
+    switch(p1ThreePoint.style.backgroundColor) {
+        case "red":
+            p1Points += (z * 3)
+            break
+        case "blue":
+            p1Points += (y * 3)
+            break
+        case "green": 
+            p1Points += (x * 3)
+            break
+        case "yellow":
+            p1Points += (w * 3)
+    }
+
+    switch(p1FourPoint.style.backgroundColor) {
+        case "red":
+            p1Points += (z * 4)
+            break
+        case "blue":
+            p1Points += (y * 4)
+            break
+        case "green": 
+            p1Points += (x * 4)
+            break
+        case "yellow":
+            p1Points += (w * 4)
+    }
+
+    const calcScoreCPU = () => {
+        let z = playerOneRed.length
+        let y = playerOneBlue.length
+        let x = playerOneGreen.length
+        let w = playerOneYellow.length
+    
+        switch(CPUOnePoint.style.backgroundColor) {
+            case "red":
+                CPUPoints += z
+                break
+            case "blue":
+                CPUPoints += y
+                break
+            case "green": 
+                CPUPoints += x
+                break
+            case "yellow":
+                CPUPoints += w
+        }
+    
+        switch(CPUTwoPoint.style.backgroundColor) {
+            case "red":
+                CPUPoints += (z * 2)
+                break
+            case "blue":
+                CPUPoints += (y * 2)
+                break
+            case "green": 
+                CPUPoints += (x * 2)
+                break
+            case "yellow":
+                CPUPoints += (w * 2)
+        }
+    
+        switch(CPUThreePoint.style.backgroundColor) {
+            case "red":
+                CPUPoints += (z * 3)
+                break
+            case "blue":
+                CPUPoints += (y * 3)
+                break
+            case "green": 
+                CPUPoints += (x * 3)
+                break
+            case "yellow":
+                CPUPoints += (w * 3)
+        }
+    
+        switch(CPUFourPoint.style.backgroundColor) {
+            case "red":
+                CPUPoints += (z * 4)
+                break
+            case "blue":
+                CPUPoints += (y * 4)
+                break
+            case "green": 
+                CPUPoints += (x * 4)
+                break
+            case "yellow":
+                CPUPoints += (w * 4)
+        }
+    }
+}
+
 
 })
 
