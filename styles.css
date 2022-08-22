@@ -33,7 +33,7 @@ body {
     font-size: x-large;
 }
 
-.cards {
+.card-container {
     background-color: silver;
     height: 12vh;
     border: .25em solid black;

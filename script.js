@@ -191,17 +191,51 @@ const detectClearPhaseCPU = () => {
 
 const disableCards = () => {
     playable = false
-    // let cards = document.getElementsByClassName("cards")
-    // cards.forEach((card) => {})
+    let cards = document.getElementsByClassName("card")
+        for(i = 0; i < cards.length; i++) {
+            let card = cards[i]
+
+        switch(card.style.backgroundColor) {
+            case "red":
+                card.style.backgroundColor = "darkred"
+                break
+            case "blue":
+                card.style.backgroundColor = "darkblue"
+                break
+            case "green":
+                card.style.backgroundColor = "darkgreen"
+                break
+            case "yellow":
+                card.style.backgroundColor = "darkorange"
+                break
+        }
+    }
 }
+
+// function to make colors in field area clickable
+
+// function that combines cpu and plr color tallies
+
+// funtion that adds selected color's total to score
+
+// let redTally = 0
+// let blueTally = 0
+// let greenTally = 0
+// let yellowTally = 0
+
+// let CPUredTally = 0
+// let CPUblueTally = 0
+// let CPUgreenTally = 0
+// let CPUyellowTally = 0
 
 const clearPhasePlr = () => {
     disableCards()
-
+    // 
 }
 
 const clearPhaseCPU = () => {
     disableCards()
+    // 
 }
 
 })
