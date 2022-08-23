@@ -1,8 +1,4 @@
 console.log("Hello, from inside mini-mandala")
-
-// DOMContentLoaded kickes off the game, including coloring the cards.
-addEventListener("DOMContentLoaded", () => {
-
     
     // Original variable list, grabs elements by class or id.
     const fieldDiv = document.querySelector(".field")
@@ -130,6 +126,7 @@ addEventListener("DOMContentLoaded", () => {
                 break
         }
         detectClearPhase()
+        console.log("P1 clear = " + detectClearPhase())
     }
 
     // event listener for card clicks that calls playerMove function
@@ -162,6 +159,7 @@ addEventListener("DOMContentLoaded", () => {
                 CPUyellowBox.innerText = CPUyellowTally
                 break
         }  
+        console.log("CPU clear = " + detectClearPhaseCPU())
         detectClearPhaseCPU()
     }
 
@@ -198,6 +196,7 @@ addEventListener("DOMContentLoaded", () => {
     const detectClearPhase = () => {
         if (calcRedTotal() >= 2 && calcBlueTotal() >= 2 && calcGreenTotal() >= 2 && calcYellowTotal() >= 2) {
             clearPhasePlr()
+            return true
         } else {
             CPUMove()
             return false
@@ -208,6 +207,7 @@ addEventListener("DOMContentLoaded", () => {
     const detectClearPhaseCPU = () => {
         if (calcRedTotal() >= 2 && calcBlueTotal() >= 2 && calcGreenTotal() >= 2 && calcYellowTotal() >= 2) {
             clearPhaseCPU()
+            return true
         } else {
             return false
         }
@@ -240,6 +240,7 @@ addEventListener("DOMContentLoaded", () => {
     // function for clear phase initiated by player.
     const clearPhasePlr = () => {
         disableCards()
+        fieldReady()
     }
 
     // funtion for clear phase initiated by CPU.
@@ -260,56 +261,126 @@ addEventListener("DOMContentLoaded", () => {
     let gEmpty = false
     let yEmpty = false
 
+
+
     // function to make colors in field area clickable, un-clickable, and .
     const fieldReady = () => {
-        if (!playable) {
-            redBox.addEventListener("click", function(e) {
-                rEmpty = true
-                let r = calcRedTotal()
-                playerOneRed += r
-                scoreColor = "red"
-                buildScoreSheet()
-                redTally = 0
-                CPUredTally = 0
-                CPUScore()
-            })
+        if (!playable && !fieldEmpty) {
+            
 
-            blueBox.addEventListener("click", function(e) {
-                bEmpty = true
-                let b = calcBlueTotal()
-                playerOneBlue += b
-                scoreColor = "blue"
-                buildScoreSheet()
-                blueTally = 0
-                CPUblueTally = 0
-                CPUScore()
-            })
+            const choice = () => {  
+                 
+                switch(e.srcElement.id) { 
+                    case "red-box":
+                        rEmpty = true
+                        let r = calcRedTotal()
+                        playerOneRed += r
+                        scoreColor = "red"
+                        buildScoreSheet()
+                        redTally = 0
+                        CPUredTally = 0
+                        redBox.innerText = 0
+                        CPUredBox.innerText = 0
+                        CPUScore()
+                        break
+                    case "blue-box":
+                        bEmpty = true
+                        let b = calcBlueTotal()
+                        playerOneBlue += b
+                        scoreColor = "blue"
+                        buildScoreSheet()
+                        blueTally = 0
+                        CPUblueTally = 0
+                        blueBox.innerText = 0
+                        CPUblueBox.innerText = 0
+                        CPUScore()
+                        break
+                    case "green-box":
+                        gEmpty = true
+                        let g = calcGreenTotal()
+                        playerOneGreen += g
+                        scoreColor = "green"
+                        buildScoreSheet()
+                        greenTally = 0
+                        CPUgreenTally = 0
+                        greenBox.innerText = 0
+                        CPUgreenBox.innerText = 0
+                        CPUScore()
+                        break
+                    case "yellow-box":
+                        yEmpty = true
+                        let y = calcYellowTotal()
+                        playerOneYellow += y
+                        scoreColor = "yellow"
+                        buildScoreSheet()
+                        yellowTally = 0
+                        CPUyellowTally = 0
+                        yellowBox.innerText = 0
+                        CPUyellowBox.innerText = 0
+                        CPUScore()
+                        break
+                }
+                redBox.addEventListener("click", choice)
+                blueBox.addEventListener("click", choice)
+                greenBox.addEventListener("click", choice)
+                yellowBox.addEventListener("click", choice)
 
-            greenBox.addEventListener("click", function(e) {
-                gEmpty = true
-                let g = calcGreenTotal()
-                playerOneGreen += g
-                scoreColor = "green"
-                buildScoreSheet()
-                greenTally = 0
-                CPUgreenTally = 0
-                CPUScore()
-            })
-
-            yellowBox.addEventListener("click", function(e) {
-                yEmpty = true
-                let y = calcYellowTotal()
-                playerOneYellow += y
-                scoreColor = "yellow"
-                buildScoreSheet()
-                yellowTally = 0
-                CPUyellowTally = 0
-                CPUScore()
-            })
-
-            resumePlay()
+                resumePlay()
+            }
         }  
     }
+
+    
+    
+    // const fieldReady = () => {
+    //     if (!playable) {
+    //         redBox.addEventListener("click", function(e) {
+    //             rEmpty = true
+    //             let r = calcRedTotal()
+    //             playerOneRed += r
+    //             scoreColor = "red"
+    //             buildScoreSheet()
+    //             redTally = 0
+    //             CPUredTally = 0
+    //             CPUScore()
+    //         })
+
+    //         blueBox.addEventListener("click", function(e) {
+    //             bEmpty = true
+    //             let b = calcBlueTotal()
+    //             playerOneBlue += b
+    //             scoreColor = "blue"
+    //             buildScoreSheet()
+    //             blueTally = 0
+    //             CPUblueTally = 0
+    //             CPUScore()
+    //         })
+
+    //         greenBox.addEventListener("click", function(e) {
+    //             gEmpty = true
+    //             let g = calcGreenTotal()
+    //             playerOneGreen += g
+    //             scoreColor = "green"
+    //             buildScoreSheet()
+    //             greenTally = 0
+    //             CPUgreenTally = 0
+    //             CPUScore()
+    //         })
+
+    //         yellowBox.addEventListener("click", function(e) {
+    //             yEmpty = true
+    //             let y = calcYellowTotal()
+    //             playerOneYellow += y
+    //             scoreColor = "yellow"
+    //             buildScoreSheet()
+    //             yellowTally = 0
+    //             CPUyellowTally = 0
+    //             CPUScore()
+    //         })
+
+    //         resumePlay()
+    //     }  
+    // }
 
     const resumePlay = () => {
         if (rEmpty == true && bEmpty == true && gEmpty == true && yEmpty == true) {
@@ -364,7 +435,7 @@ addEventListener("DOMContentLoaded", () => {
     
         } else {
             CPUEndTrigger = true
-            console.log("wtf")
+            resumePlay()
         }
     }
 
@@ -546,7 +617,7 @@ addEventListener("DOMContentLoaded", () => {
                 break
         }
     }
-})
+//})
 
 
 
