@@ -1,5 +1,9 @@
 console.log("Hello, from inside mini-mandala")
-    
+//////////////////////////   
+//       SETUP          //
+//////////////////////////
+
+
     // Original variable list, grabs elements by class or id.
     const fieldDiv = document.querySelector(".field")
     
@@ -85,6 +89,12 @@ console.log("Hello, from inside mini-mandala")
 
     // original loading of player cards
     cardsRefresh()
+
+
+//////////////////////////////////
+//       PHASE ONE: PLAY        //
+//////////////////////////////////
+
 
     // function that controls player turns.
     const playerMove = (e) => {
@@ -213,6 +223,12 @@ console.log("Hello, from inside mini-mandala")
         }
     }
 
+
+//////////////////////////////////////////////////
+//         PHASE TWO: CLEAR THE BOARD           //
+//////////////////////////////////////////////////
+
+
     // function to disable player cards for clear phase.
     const disableCards = () => {
         playable = false
@@ -330,58 +346,6 @@ console.log("Hello, from inside mini-mandala")
         }  
     }
 
-    
-    
-    // const fieldReady = () => {
-    //     if (!playable) {
-    //         redBox.addEventListener("click", function(e) {
-    //             rEmpty = true
-    //             let r = calcRedTotal()
-    //             playerOneRed += r
-    //             scoreColor = "red"
-    //             buildScoreSheet()
-    //             redTally = 0
-    //             CPUredTally = 0
-    //             CPUScore()
-    //         })
-
-    //         blueBox.addEventListener("click", function(e) {
-    //             bEmpty = true
-    //             let b = calcBlueTotal()
-    //             playerOneBlue += b
-    //             scoreColor = "blue"
-    //             buildScoreSheet()
-    //             blueTally = 0
-    //             CPUblueTally = 0
-    //             CPUScore()
-    //         })
-
-    //         greenBox.addEventListener("click", function(e) {
-    //             gEmpty = true
-    //             let g = calcGreenTotal()
-    //             playerOneGreen += g
-    //             scoreColor = "green"
-    //             buildScoreSheet()
-    //             greenTally = 0
-    //             CPUgreenTally = 0
-    //             CPUScore()
-    //         })
-
-    //         yellowBox.addEventListener("click", function(e) {
-    //             yEmpty = true
-    //             let y = calcYellowTotal()
-    //             playerOneYellow += y
-    //             scoreColor = "yellow"
-    //             buildScoreSheet()
-    //             yellowTally = 0
-    //             CPUyellowTally = 0
-    //             CPUScore()
-    //         })
-
-    //         resumePlay()
-    //     }  
-    // }
-
     const resumePlay = () => {
         if (rEmpty == true && bEmpty == true && gEmpty == true && yEmpty == true) {
             cardsRefresh()
@@ -389,7 +353,14 @@ console.log("Hello, from inside mini-mandala")
             return false
         }       
     }
+  
     
+
+////////////////////////////////////////////
+//        PHASE THREE: SCORING            //
+////////////////////////////////////////////
+
+
     let CPURed = []
     let CPUBlue = []
     let CPUGreen = []
@@ -472,6 +443,11 @@ console.log("Hello, from inside mini-mandala")
             endGame()
         } 
     }
+
+///////////////////////////////////////////
+//        FINAL PHASE: ENDGAME          //
+//////////////////////////////////////////
+
 
     // function to trigger end game.
     const endGame = () => {
@@ -617,7 +593,11 @@ console.log("Hello, from inside mini-mandala")
                 break
         }
     }
-//})
+
+
+
+
+
 
 
 
