@@ -23,6 +23,8 @@ const CPUTwoPoint = document.querySelector("#two-point-p1")
 const CPUThreePoint = document.querySelector("#three-point-p1")
 const CPUFourPoint = document.querySelector("#four-point-p1")
 
+const winWin = document.querySelector("#win")
+
 let redTally = 0
 let blueTally = 0
 let greenTally = 0
@@ -296,22 +298,44 @@ const disableCards = () => {
         let g = calcGreenTotal()
         let y = calcYellowTotal()
 
-        let colorArray = [r, b, g, y]
-        let lowToHigh = colorArray.sort((a, b) => a - b)
-        console.log(lowToHigh[3])
+        function caseCheck() {
+            if (r >= b && r >= g && r >= y) {
+                return 0
+            } else if (b >= r && b >= g && b >= y) {
+                return 1
+            } else if (g >= r && g >= b && g >= y) {
+                return 2
+            } else if (y >= r && y >= b && y>= g) {
+                return 3
+            }
+        }
 
-        switch (lowToHigh) {
-            case "r":
-                console.log("comp chose red")    
-                break
-            case "b":
+        
+
+        switch (caseCheck()) {
+            case 0:
                 console.log("comp chose red")
+                let r = calcRedTotal()
+                CPURed += r
+                cleanRed()
                 break
-            case "g":
-                console.log("comp chose red") 
+            case 1:
+                console.log("comp chose blue")
+                let b = calcBlueTotal()
+                CPUBlue += b
+                cleanBlue()
                 break
-            case "y":
-                console.log("comp chose red")
+            case 2:
+                console.log("comp chose green") 
+                let g = calcGreenTotal()
+                CPUGreen += g
+                cleanGreen()
+                break
+            case 3:
+                console.log("comp chose yellow")
+                let y = calcYellowTotal()
+                playerOneYellow += y
+                cleanYellow()
                 break
         }
         detectNewRound()   
@@ -347,14 +371,10 @@ const roundSet = () => {
         scoreItUp() 
     } else if (roundTwo && roundThree) {
         scoreItUp()
-        console.log("Player red total = " + playerOneRed)
-        console.log()
+        console.log(winnerWinner())
+       
     }
 }
-
-console.log("p1 bg color is " +  p1OnePoint.style.backgroundColor)
-
-
 
 const scoreItUp = () => {
     let z = playerOneRed
@@ -367,15 +387,31 @@ const scoreItUp = () => {
     let xx = CPUGreen
     let ww = CPUYellow
 
-    p1Points += z + (y * 2) + (x * 3) + (w * 4)
-    CPUPoints += w + (xx * 2) + (yy * 3) + (zz * 4)
+    y = y * 2
+    x = x * 3
+    w = w * 4
+
+    xx = xx * 2
+    yy = yy * 3
+    zz = zz * 4
+
+    p1Points += (z + y + x + w)
+    CPUPoints += (ww + xx + yy + zz)
 
     document.getElementById("p1-endgame").innerText = "PLAYER SCORE:    " + p1Points
     document.getElementById("CPU-endgame").innerText = "CPU SCORE:  " + CPUPoints
 
 }
 
-
+const winnerWinner = () => {
+    if (p1Points > CPUPoints){
+        winWin.innerText = "YOU WIN!"
+    } else if (p1Points < CPUPoints) {
+        winWin.innerText = "YOU LOSE!"
+    } else if (p1Points === CPUPoints) {
+        winWin.innerText = "YAY A TIE!"
+    }
+}
 
 
 

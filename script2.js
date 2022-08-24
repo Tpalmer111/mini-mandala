@@ -7,7 +7,9 @@
 
 
 
-
+ // let colorArray = [r, b, g, y]
+       // let lowToHigh = colorArray.sort((a, b) => a - b)
+       // console.log(lowToHigh[3])
 
 
 // console.log("Hello, from inside mini-mandala")
