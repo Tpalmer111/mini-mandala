@@ -13,6 +13,16 @@ const CPUblueBox = document.querySelector("#CPUblue-box")
 const CPUgreenBox = document.querySelector("#CPUgreen-box")
 const CPUyellowBox = document.querySelector("#CPUyellow-box")
 
+const p1OnePoint = document.querySelector("#one-point-p1")
+const p1TwoPoint = document.querySelector("#two-point-p1")
+const p1ThreePoint = document.querySelector("#three-point-p1")
+const p1FourPoint = document.querySelector("#four-point-p1")
+
+const CPUOnePoint = document.querySelector("#one-point-p1")
+const CPUTwoPoint = document.querySelector("#two-point-p1")
+const CPUThreePoint = document.querySelector("#three-point-p1")
+const CPUFourPoint = document.querySelector("#four-point-p1")
+
 let redTally = 0
 let blueTally = 0
 let greenTally = 0
@@ -22,6 +32,19 @@ let CPUredTally = 0
 let CPUblueTally = 0
 let CPUgreenTally = 0
 let CPUyellowTally = 0
+
+let playerOneRed = 0
+let playerOneBlue = 0
+let playerOneGreen = 0
+let playerOneYellow = 0
+
+let CPURed = 0
+let CPUBlue = 0
+let CPUGreen = 0
+let CPUYellow = 0
+
+let p1Points = 0
+let CPUPoints = 0
 
 const colorPicker = () => {
     let num = Math.floor(Math.random() * 4)
@@ -36,6 +59,23 @@ const colorPicker = () => {
     }
 }
 
+const scoreCards = () => {
+    document.querySelector("#one-point-CPU").style.backgroundColor = "yellow"
+    document.querySelector("#two-point-CPU").style.backgroundColor = "green"
+    document.querySelector("#three-point-CPU").style.backgroundColor = "blue"
+    document.querySelector("#four-point-CPU").style.backgroundColor = "red"
+    document.querySelector("#one-point-p1").style.backgroundColor = "red"
+    document.querySelector("#two-point-p1").style.backgroundColor = "blue"
+    document.querySelector("#three-point-p1").style.backgroundColor = "green"
+    document.querySelector("#four-point-p1").style.backgroundColor = "yellow"  
+    
+    document.getElementById("p1-endgame").innerText = "PLAYER SCORE:    " + p1Points
+    document.getElementById("CPU-endgame").innerText = "CPU SCORE:  " + CPUPoints
+
+}
+
+scoreCards()
+
 const colorFillOne = () => {
     document.querySelector("#card-one").style.backgroundColor = colorPicker()
 }
@@ -45,13 +85,12 @@ const colorFillTwo = () => {
 }
 
 const colorFillThree = () => {
-document.querySelector("#card-three").style.backgroundColor = colorPicker()
+    document.querySelector("#card-three").style.backgroundColor = colorPicker()
 }
 
 const colorFillFour = () => {
     document.querySelector("#card-four").style.backgroundColor = colorPicker()
 }
-
 
 const cardsRefresh = () => {
     colorFillOne()
@@ -189,38 +228,221 @@ const disableCards = () => {
                     break
             }
         }
-    
-    console.log("wtf is going on")
+   
 
     const playerChoice = (e) => {
-        if (playable) {
-            
+        if (playable) {   
             return 
         }
-        console.log("button ID = " + e.srcElement.id)
         
         switch(e.srcElement.id) {
             case "red-box":
-                console.log("red")
+                let r = calcRedTotal()
+                playerOneRed += r
+                cleanRed()
+                CPUChoice()
                 break
             case "blue-box":
-                console.log("blue")
+                let b = calcBlueTotal()
+                playerOneBlue += b
+                cleanBlue()
+                CPUChoice()
                 break
             case "green-box":
-                console.log("green")
+                let g = calcGreenTotal()
+                playerOneGreen += g
+                cleanGreen()
+                CPUChoice()
                 break
             case "yellow-box":
-                console.log("yellow")
+                let y = calcYellowTotal()
+                playerOneYellow += y
+                cleanYellow()
+                CPUChoice()
+                break
+            
+        }
+        
+
+    }
+
+    const cleanRed = () => {
+        redTally = 0
+        redBox.innerText = redTally
+        CPUredTally = 0
+        CPUredBox.innerText = CPUredTally
+    }
+
+    const cleanBlue = () => {
+        blueTally = 0
+        blueBox.innerText = blueTally
+        CPUblueTally = 0
+        CPUblueBox.innerText = CPUblueTally
+    }
+
+    const cleanGreen = () => {
+        greenTally = 0
+        greenBox.innerText = greenTally
+        CPUgreenTally = 0
+        CPUgreenBox.innerText = CPUgreenTally
+    }
+
+    const cleanYellow = () => {
+        yellowTally = 0
+        yellowBox.innerText = yellowTally
+        CPUyellowTally = 0
+        CPUyellowBox.innerText = CPUyellowTally
+    }
+
+    const CPUChoice = () => {
+
+        let r = calcRedTotal()
+        let b = calcBlueTotal()
+        let g = calcGreenTotal()
+        let y = calcYellowTotal()
+
+        let colorArray = [r, b, g, y]
+        let lowToHigh = colorArray.sort((a, b) => a - b)
+        console.log(lowToHigh[3])
+
+        switch (lowToHigh) {
+            case "r":
+                console.log("comp chose red")    
+                break
+            case "b":
+                console.log("comp chose red")
+                break
+            case "g":
+                console.log("comp chose red") 
+                break
+            case "y":
+                console.log("comp chose red")
                 break
         }
         
-    }
+        
+        // if (r >= b && r >= g && r > y) {
+        //     console.log("COMP chose red")
+        //     CPURed += r
+        //     scoreColor = "red"
+        //     cleanRed()
+        //     return
+        // } else if (b > r && b >= g && b >= y) {
+        //     console.log("COMP chose blue")
+        //     CPUBlue += b
+        //     scoreColor = "blue"
+        //     cleanBlue()
+        //     return
+        // } else if (g >= r && g > b && g >= y) {
+        //     console.log("COMP chose green")
+        //     CPUGreen += g
+        //     scoreColor = "green"
+        //     cleanGreen()
+        //     return
+        // } else if (y >= r && y >= b && y > g) {
+        //     console.log("COMP chose yellow")
+        //     CPUYellow += y
+        //     scoreColor = "yellow"
+        //     cleanYellow()
+        //     return
+        // }
 
+        detectNewRound()
+        
+    }
     redBox.addEventListener("click", playerChoice) 
     blueBox.addEventListener("click", playerChoice)
     greenBox.addEventListener("click", playerChoice)
     yellowBox.addEventListener("click", playerChoice)
 
+}
+
+
+
+const detectNewRound = () => {
+    if (calcRedTotal() == 0 && calcBlueTotal() == 0 && calcGreenTotal() == 0 && calcYellowTotal() == 0) {
+        roundSet()
+    }
+}
+
+let roundTwo = false
+let roundThree = false
+
+const roundSet = () => {
+    if (!roundTwo) {
+        roundTwo = true
+        playable = true
+        cardsRefresh()
+        scoreItUp()
+    } else if (roundTwo && !roundThree) {
+        roundThree = true
+        playable = true
+        cardsRefresh()
+        scoreItUp() 
+    } else if (roundTwo && roundThree) {
+        scoreItUp()
+        console.log("Player red total = " + playerOneRed)
+        console.log()
+    }
+}
+
+console.log("p1 bg color is " +  p1OnePoint.style.backgroundColor)
+
+
+
+const scoreItUp = () => {
+    let z = playerOneRed
+    let y = playerOneBlue
+    let x = playerOneGreen
+    let w = playerOneYellow
+
+    let zz = CPURed
+    let yy = CPUBlue
+    let xx = CPUGreen
+    let ww = CPUYellow
+
+    p1Points += z + (y * 2) + (x * 3) + (w * 4)
+    CPUPoints += w + (xx * 2) + (yy * 3) + (zz * 4)
+
+    document.getElementById("p1-endgame").innerText = "PLAYER SCORE:    " + p1Points
+    document.getElementById("CPU-endgame").innerText = "CPU SCORE:  " + CPUPoints
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const newRound = () => {
+//     playable = true
+//     cardsRefresh()  
+// }
+
+// const findBig = () => {
+//     let r = calcRedTotal()
+//     let b = calcBlueTotal()
+//     let g = calcGreenTotal()
+//     let y = calcYellowTotal()
+//     let dumbArray = [r, b, g, y]
+//     let largest = 0
+
+// for (i = 0; i < dumbArray.length; i++) {
+//     if (dumbArray[i] > largest) {
+//         largest = dumbArray[i]
+//     }
     
+// }
+// console.log("the dumb array works " + largest)
+// }
+

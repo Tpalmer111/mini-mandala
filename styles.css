@@ -48,11 +48,21 @@ body {
     font-size: x-large;
 }
 
+#display {
+    background-color: silver;
+    height: 12vh;
+    border: .25em solid black;
+    text-align: center;
+    font-size: x-large;
+}
+
 .square {
     background-color: white;
     width: 5rem;
     height: 5rem;
     margin: 2em;
+    border: .2em solid white;
+    border-radius: 5%;
 }
 
 #red-box, #CPUred-box {
