@@ -8,7 +8,7 @@ body {
 .title {
     background-color: sandybrown;
     height: 98px;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-family: Bungee Shade;
     color: black;
@@ -22,7 +22,7 @@ body {
 .CPU-score {
     background-color: sandybrown;
     height: 12vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -32,7 +32,7 @@ body {
 .field-CPU {
     background-color: sandybrown;
     height: 10vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -43,7 +43,7 @@ body {
 .field {
     background-color: sandybrown;
     height: 10vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -53,7 +53,7 @@ body {
 .card-container {
     background-color: sandybrown;
     height: 12vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-family: Bungee Shade;
     color: black; 
@@ -62,7 +62,7 @@ body {
 .p1-score {
     background-color: sandybrown;
     height: 12vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -71,8 +71,8 @@ body {
 
 #display {
     background-color: sandybrown;
-    height: 10vh;
-    border: .15em solid black;
+    height: 11vh;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -88,7 +88,7 @@ body {
 .rect {
     background-color: sandybrown;
     height: 8vh;
-    border: .15em solid black;
+    border: .15em solid saddlebrown;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -101,10 +101,10 @@ body {
     width: 5rem;
     height: 5rem;
     margin: 2em;
-    border: .2em solid black;
+    border: .2em solid darkslategray;
     border-radius: 5%;
     font-family: Bungee Shade;
-    color: black; 
+    color: black;
 }
 
 .square-2 {
@@ -112,7 +112,7 @@ body {
     width: 5rem;
     height: 5rem;
     margin: 2em;
-    border: .2em solid black;
+    border: .2em solid darkslategray;
     border-radius: 5%;
     font-family: Bungee Shade;
     color: black; 

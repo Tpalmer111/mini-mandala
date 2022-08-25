@@ -248,16 +248,16 @@ const phaseTwo = () => {
             let card = cards[i]
             switch(card.style.backgroundColor) {
                 case "red":
-                    card.style.backgroundColor = "grey"
+                    card.style.backgroundColor = "darkslategrey"
                     break
                 case "blue":
-                    card.style.backgroundColor = "grey"
+                    card.style.backgroundColor = "darkslategrey"
                     break
                 case "green":
-                    card.style.backgroundColor = "grey"
+                    card.style.backgroundColor = "darkslategrey"
                     break
                 case "yellow":
-                    card.style.backgroundColor = "grey"
+                    card.style.backgroundColor = "darkslategrey"
                     break
             }
         }

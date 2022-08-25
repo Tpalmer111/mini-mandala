@@ -84,6 +84,12 @@ When either player has acquiered a fourth color on their scoreboard, the endgame
 3. (stretch goal) Explore other syling options
 
 
+## __NOTES__
+
+* Prior to first deployment
+    * This project has been a learning process more than a product I'm proud. This is only worth mentioning due to the fact that the resulting product is a slim comparison to the vision I began with. That is likely due to the fact that I clearly missed the point. I saw it as an oppertunity to be creative, and instead should have taken better stock of my abilities. Had I instead speant the first half of the alloted time doing research instead of coding my time would have been valuably spent. The code written in that time wasn't useless, becasue I learned something, but almost useless. 
+
+
 
 ## Inspiration:
 
@@ -108,17 +114,17 @@ You start the game with a hand of six cards and the central playing mat, display
 - [X] Write a list of variables to start with.
 - [ ] Write a list of eventListeners to identify click events.
     - [X] Click event for player turn selection.
-    - [ ] Click event for player field selection.
-    - [ ] Click to clear the board and start a new game.
-- [ ] Create funtion for selecting colors during clear phase.
+    - [X] Click event for player field selection.
+    - [X] Click to clear the board and start a new game.
+- [X] Create funtion for selecting colors during clear phase.
     - [X] Disable player cards.
-    - [ ] Enable event listeners for selection cards in field.
-    - [ ] Reset field tallys.
-    - [ ] Disable field and enable player cards.
+    - [X] Enable event listeners for selection cards in field.
+    - [X] Reset field tallys.
+    - [X] Disable field and enable player cards.
 - [X] Write a function (colorPicker) to choose a random color.
 - [X] Write a function (CPUMove) to place a random card for the CPU.
 - [ ] Write a funtion (CPUChoice) to make the CPU choose the highest value color from the field.
-- [ ] Write a function (tallyScore) that tallies the totals of each color for each player.
+- [X] Write a function (tallyScore) that tallies the totals of each color for each player.
 - [ ] Write a function (colorScore) that collects the order of the colors taken by each player and applies the correct value
-- [ ] Write a function (calcScore) that calculates the total score based on total cards per color vs. value for each color.
-- [ ] Improve stylesheet and overall aesthetics of the game.
+- [X] Write a function (calcScore) that calculates the total score based on total cards per color vs. value for each color.
+- [X] Improve stylesheet and overall aesthetics of the game.
