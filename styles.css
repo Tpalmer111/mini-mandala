@@ -1,94 +1,159 @@
 body {
-    background-color: orange;
+    background-color: saddlebrown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
-    background-color: silver;
-    height: 100px;
-    border: .25em solid black;
+    background-color: sandybrown;
+    height: 98px;
+    border: .15em solid black;
     text-align: center;
+    font-family: Bungee Shade;
+    color: black;
+    display: flex;  
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+ 
 }
 
 .CPU-score {
-    background-color: silver;
+    background-color: sandybrown;
     height: 12vh;
-    border: .25em solid black;
+    border: .15em solid black;
     text-align: center;
     font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 .field-CPU {
-    background-color: silver;
-    height: 12vh;
-    border: .25em solid black;
+    background-color: sandybrown;
+    height: 10vh;
+    border: .15em solid black;
     text-align: center;
     font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
+    display: flex;
 }
 
 .field {
-    background-color: silver;
-    height: 12vh;
-    border: .25em solid black;
+    background-color: sandybrown;
+    height: 10vh;
+    border: .15em solid black;
     text-align: center;
     font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 .card-container {
-    background-color: silver;
+    background-color: sandybrown;
     height: 12vh;
-    border: .25em solid black;
+    border: .15em solid black;
     text-align: center;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 .p1-score {
-    background-color: silver;
+    background-color: sandybrown;
     height: 12vh;
-    border: .25em solid black;
+    border: .15em solid black;
     text-align: center;
     font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 #display {
-    background-color: silver;
-    height: 12vh;
-    border: .25em solid black;
+    background-color: sandybrown;
+    height: 10vh;
+    border: .15em solid black;
     text-align: center;
     font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
 }
+
+.again {
+    text-align: center;
+    font-family: Bungee Shade;
+    color: black; 
+}
+
+.rect {
+    background-color: sandybrown;
+    height: 8vh;
+    border: .15em solid black;
+    text-align: center;
+    font-size: x-large;
+    font-family: Bungee Shade;
+    color: black; 
+}
+
 
 .square {
     background-color: white;
     width: 5rem;
     height: 5rem;
     margin: 2em;
-    border: .2em solid white;
+    border: .2em solid black;
     border-radius: 5%;
+    font-family: Bungee Shade;
+    color: black; 
+}
+
+.square-2 {
+    background-color: white;
+    width: 5rem;
+    height: 5rem;
+    margin: 2em;
+    border: .2em solid black;
+    border-radius: 5%;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 #red-box, #CPUred-box {
     background-color: red;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 #blue-box, #CPUblue-box {
     background-color: blue;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 #green-box, #CPUgreen-box {
     background-color: green;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 #yellow-box, #CPUyellow-box {
     background-color: yellow;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Bungee Shade;
+    color: black; 
 }
 
 .flex-row {
     display: flex;
     flex-direction: row;
+    font-family: Bungee Shade;
+    color: black; 
 }
 

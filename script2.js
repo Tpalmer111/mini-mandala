@@ -4,6 +4,97 @@
 
 
 
+            // if (r >= b && r >= g && r >= y) {
+                // console.log("comp chose red")
+                // CPURed += r
+                // cleanRed()
+            // } else if (b >= r && b >= g && b >= y) {
+                // console.log("comp chose blue")
+                // CPUBlue += b
+                // cleanBlue()
+            // } else if (g >= r && g >= b && g >= y) {
+                // console.log("comp chose green") 
+                // CPUGreen += g
+                // cleanGreen()
+            // } else if (y >= r && y >= b && y>= g) {
+                // console.log("comp chose yellow")
+                // playerOneYellow += y
+                // cleanYellow()
+            // }
+ 
+ 
+
+
+
+       // function caseCheck() {
+        //     if (r >= b && r >= g && r >= y) {
+        //         return 0
+        //     } else if (b >= r && b >= g && b >= y) {
+        //         return 1
+        //     } else if (g >= r && g >= b && g >= y) {
+        //         return 2
+        //     } else if (y >= r && y >= b && y>= g) {
+        //         return 3
+        //     }
+        // }
+
+        // switch (caseCheck()) {
+        //     case 0:
+        //         console.log("comp chose red")
+        //         CPURed += r
+        //         cleanRed()
+        //         break
+        //     case 1:
+        //         console.log("comp chose blue")
+        //         CPUBlue += b
+        //         cleanBlue()
+        //         break
+        //     case 2:
+        //         console.log("comp chose green") 
+        //         CPUGreen += g
+        //         cleanGreen()
+        //         break
+        //     case 3:
+        //         console.log("comp chose yellow")
+        //         playerOneYellow += y
+        //         cleanYellow()
+        //         break
+
+
+// switch (caseCheck()) {
+//     case 0:
+//         console.log("comp chose red")
+//         let r = calcRedTotal()
+//         CPURed += r
+//         cleanRed()
+//         break
+//     case 1:
+//         console.log("comp chose blue")
+//         let b = calcBlueTotal()
+//         CPUBlue += b
+//         cleanBlue()
+//         break
+//     case 2:
+//         console.log("comp chose green") 
+//         let g = calcGreenTotal()
+//         CPUGreen += g
+//         cleanGreen()
+//         break
+//     case 3:
+//         console.log("comp chose yellow")
+//         let y = calcYellowTotal()
+//         playerOneYellow += y
+//         cleanYellow()
+//         break
+// }
+
+
+
+
+
+
+
+
 
 
 
@@ -900,9 +991,9 @@
 //         let g = calcGreenTotal()
 //         let y = calcYellowTotal()
 
-//         let colorArray = [r, b, g, y]
-//         let lowToHigh = colorArray.sort((a, b) => a - b)
-//         console.log(lowToHigh[3])
+        // let colorArray = [r, b, g, y]
+        // let lowToHigh = colorArray.sort((a, b) => a - b)
+        // console.log(lowToHigh[3])
 
 //         switch (lowToHigh) {
 //             case "r":
