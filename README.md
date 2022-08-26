@@ -2,6 +2,15 @@
 
 Color coded card game of art, skill and chance.
 
+[PLAY HERE](https://tpalmer111.github.io/mini-mandala/)
+
+### __instructions__
+
+Click a player card to begin. If all four colors have at least two cards in the field, the next phase begins. Initiate the clear phase by clicking one of the colors in the lower field, once all colors are chosen the next round restarts the process. There will be three rounds total. Each color has a different value, and they differ between the players as well. During the clear phase the player always gets to choose first, but the CPU will take two colors on the second round, and three colors on the third round. Good Luck!
+
+Tip: pick yellow and green first, and blue over red.
+
+Tip: make sure yeloow is actually worth more than green.
 
 
 ## __Game Outline__
@@ -63,7 +72,10 @@ When either player has acquiered a fourth color on their scoreboard, the endgame
 
 3. Make CPU decision tree intelligent instead of random.
 
-4. Drag and drop the players cards to the play field.
+4. Re-design the board to look and feel more like a card game.
+    1. Drag and drop the players cards to the play field.
+    2. Add more visual representation of CPU moves.
+    3. Add sound effects/music.
 
 
 
@@ -107,7 +119,7 @@ You start the game with a hand of six cards and the central playing mat, display
 
 ## __Backgrounds and Textures__
 
-[Transparent Textures] (https://www.transparenttextures.com/)
+[Transparent Textures](https://www.transparenttextures.com/)
 
 The patters and textures are taken from the website Transparent Textures. Diagmonds (DarK) made by INS, and Escheresque Dark made by Ste Patten.
 
