@@ -205,7 +205,7 @@ const playersMoves = (e) => {
 }
 
 // event listeners for "clicks" by the player to initiate the players turn
-cardOne.addEventListener("click", playersMoves, audio.play) 
+cardOne.addEventListener("click", playersMoves) 
 cardTwo.addEventListener("click", playersMoves)
 cardThree.addEventListener("click", playersMoves)
 cardFour.addEventListener("click", playersMoves)
