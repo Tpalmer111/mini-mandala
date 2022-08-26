@@ -1,14 +1,24 @@
+HTML {
+    height: 100%;
+  }
+
 body {
-    background-color: saddlebrown;
+    background-color: #00b86e;
+    background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
+p {
+    font-size: medium;
+    font-family: Bungee Shade;
+}
+
 .title {
-    background-color: sandybrown;
-    height: 98px;
-    border: .15em solid saddlebrown;
+    background: transparent;
+    height: 105px;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-family: Bungee Shade;
     color: black;
@@ -16,13 +26,15 @@ body {
     justify-content: center;
     align-content: space-between;
     flex-direction: column;
+    font-size: large;
+    font-weight: 500;
  
 }
 
 .CPU-score {
-    background-color: sandybrown;
+    background: transparent;
     height: 12vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -30,9 +42,9 @@ body {
 }
 
 .field-CPU {
-    background-color: sandybrown;
+    background: transparent;
     height: 10vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -41,9 +53,9 @@ body {
 }
 
 .field {
-    background-color: sandybrown;
+    background: transparent;
     height: 10vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -51,18 +63,19 @@ body {
 }
 
 .card-container {
-    background-color: sandybrown;
+    background: transparent;
     height: 12vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-family: Bungee Shade;
     color: black; 
 }
 
 .p1-score {
-    background-color: sandybrown;
+    background: transparent;
+    /* background-color: sandybrown; */
     height: 12vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -70,9 +83,9 @@ body {
 }
 
 #display {
-    background-color: sandybrown;
+    background: transparent;
     height: 11vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -86,9 +99,9 @@ body {
 }
 
 .rect {
-    background-color: sandybrown;
+    background: transparent;
     height: 8vh;
-    border: .15em solid saddlebrown;
+    border: .15em solid darkslateblue;
     text-align: center;
     font-size: x-large;
     font-family: Bungee Shade;
@@ -97,6 +110,8 @@ body {
 
 
 .square {
+    background-color: #00b86e;
+    background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
     background-color: white;
     width: 5rem;
     height: 5rem;
@@ -108,6 +123,8 @@ body {
 }
 
 .square-2 {
+    background-color: #00b86e;
+    background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
     background-color: white;
     width: 5rem;
     height: 5rem;
@@ -157,3 +174,14 @@ body {
     color: black; 
 }
 
+#click {
+    font-family: Bungee Shade;
+    color: black;
+    font-size: medium;
+}
+
+#here {
+    font-family: Bungee Shade;
+    color: black; 
+    font-size: medium;
+}

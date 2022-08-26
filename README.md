@@ -87,7 +87,7 @@ When either player has acquiered a fourth color on their scoreboard, the endgame
 ## __NOTES__
 
 * Prior to first deployment
-    * This project has been a learning process more than a product I'm proud. This is only worth mentioning due to the fact that the resulting product is a slim comparison to the vision I began with. That is likely due to the fact that I clearly missed the point. I saw it as an oppertunity to be creative, and instead should have taken better stock of my abilities. Had I instead speant the first half of the alloted time doing research instead of coding my time would have been valuably spent. The code written in that time wasn't useless, becasue I learned something, but almost useless. 
+    * This project has been a learning process more than a product I'm proud of. This is only worth mentioning due to the fact that the resulting product is a slim comparison to the vision I began with. That is likely due to the fact that I clearly missed the point. I saw it as an oppertunity to be creative, and instead should have taken better stock of my abilities. Had I instead speant the first half of the alloted time doing research instead of coding my time would have been valuably spent. The code written in that time wasn't useless, becasue I learned something, but almost useless. 
 
 
 
@@ -105,6 +105,11 @@ Mandala from Trevor Benjamin & Brett J. Gilbert is not quite as spiritual. This 
 
 You start the game with a hand of six cards and the central playing mat, displaying two Mandalas and a River and Cup for each player. The Mandalas are separated into three areas, the Mountain area in the middle and the two player areas on their respective sides. On your turn you can choose from three actions: Either you play exactly one card into the Mountain area of one of the Mandalas and draw up to three new cards, or you play any amount of cards of exactly one color in your personal player area. Using one of these two actions, you have to follow the Rule of Color! This rule states, that in a Mandala each color may only be found in exactly one area. In other words: if red is already located in the Mountain area, you can not play red cards into your player area (but you could play a red card into the Mountain area). As a third action you can choose to not play any card into a Mandala at all, but instead put any number of cards of the same color onto the discard pile and draw exactly the same amount of cards you discarded. After you finished your turn, you check if a Mandala has been finished. This means: all six colors of the game are represented in that Mandala. If thats the case, the ceremony of destruction happens. Beginning with the player who has more cards in their player area, that player choose one color from the Mountain area, takes all cards of that color and adds them to their River and Cup. The position of the color in your River determines how much victory points the cards of the same color in your Cup are worth for you at the end of the game. The game ends either when the draw pile is used up or one player has all six colors of the game added to their River.
 
+## __Backgrounds and Textures__
+
+[Transparent Textures] (https://www.transparenttextures.com/)
+
+The patters and textures are taken from the website Transparent Textures. Diagmonds (DarK) made by INS, and Escheresque Dark made by Ste Patten.
 
 
 ## __To Do__

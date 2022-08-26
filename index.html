@@ -3,15 +3,17 @@
     <head>
         <title></title>
         <link rel="stylesheet" href="./styles.css">
-    
+      
     </head>
     <body>
+   
+              
         <div class="grid-container"></div>
             <div class="title">
                 <h1>Mini-Mandala</h1>
                 <p>A color coded card game of art, skill, and chance.</p>
             </div>
-            <div class="CPU-score flex-row flex-center">
+            <div class=" skulls CPU-score flex-row flex-center">
                 <div class="square-2" id="one-point-CPU">1 pt</div>
                 <div class="square-2" id="two-point-CPU">2 pt</div>
                 <div class="square-2" id="three-point-CPU">3 pt</div>
@@ -26,10 +28,12 @@
             </div>
 
             <div class="field flex-row flex-center">
+                <div id="click"></div>
                 <div class="square" id="red-box">0</div>
                 <div class="square" id="blue-box">0</div>
                 <div class="square" id="green-box">0</div>
                 <div class="square" id="yellow-box">0</div> 
+                <div id="here"></div>
             </div>
         
             <div class="p1-score flex-row flex-center">
@@ -39,10 +43,14 @@
                 <div class="square-2" id="four-point-p1">4 pt</div> 
             </div>
             <div class="card-container flex-row flex-center">
-                <div class="card square" id="card-one">click</div>
+                PLAYER
+                <div class="card square" id="card-one">click
+                    <object data=""></object>
+                </div>
                 <div class="card square" id="card-two">click</div>
                 <div class="card square" id="card-three">click</div>
                 <div class="card square" id="card-four">click</div>
+                CARDS
             </div>
             <div id="display">
                 <div id="win"></div>
@@ -56,8 +64,7 @@
                
             </div>
             <div class="rect again"></div>
-                
+      
             <script src="./script.js"></script>
-        
     </body>
 </html>

@@ -35,6 +35,9 @@ const winWin = document.querySelector("#win")
 const p1Display = document.getElementById("p1-endgame")
 const CPUDisplay = document.getElementById("CPU-endgame")
 
+const click = document.querySelector("#click")
+const here = document.querySelector("#here")
+
 // vars to track colors in the player field
 let redTally = 0
 let blueTally = 0
@@ -202,7 +205,7 @@ const playersMoves = (e) => {
 }
 
 // event listeners for "clicks" by the player to initiate the players turn
-cardOne.addEventListener("click", playersMoves) 
+cardOne.addEventListener("click", playersMoves, audio.play) 
 cardTwo.addEventListener("click", playersMoves)
 cardThree.addEventListener("click", playersMoves)
 cardFour.addEventListener("click", playersMoves)
@@ -238,10 +241,11 @@ const calcYellowTotal = () => {
     let totalYellow = (x + y)
     return totalYellow 
 }
-
 // dissables player card clicks, initiates phase-two, player and CPU moves
 const phaseTwo = () => {
     playable = false
+    click.innerText = "CLICK >"
+    here.innerText = "< HERE"
     winWin.innerText = "CLEAR THE BOARD: pick a color"
     let cards = document.getElementsByClassName("card")
         for(i = 0; i < cards.length; i++) {
@@ -315,12 +319,19 @@ const phaseTwo = () => {
          }
     }
 
+const listeners = () => {
+    if (playable) {
+        return
+    } else if (!playable) {
     // event listeners for the cards to be selected from the player field
     redBox.addEventListener("click", playerChoice) 
     blueBox.addEventListener("click", playerChoice)
     greenBox.addEventListener("click", playerChoice)
     yellowBox.addEventListener("click", playerChoice)
+} 
+}
 
+listeners()
     // reset the red cards in the field
     const cleanRed = () => {
         redTally = 0
@@ -377,6 +388,7 @@ const roundSet = () => {
         scoreItUp()
         cardsRefresh()
     } else if (roundTwo && roundThree) {
+        playable = true
         scoreItUp()
         winnerWinner()      
     }
@@ -411,15 +423,19 @@ const scoreItUp = () => {
 
 // determines the winner and displays endgame text
 const winnerWinner = () => {
+    let text = "click here to play again"
+    
     // resets the game
     const againButton = document.createElement("div")
-    againButton.innerText = "Again?"
+    againButton.innerText = text 
+    againButton.style.fontFamily = "Bungee Shade"
     
     const againAndAgain = document.querySelector(".again")
     againAndAgain.appendChild(againButton)
 
-    againButton.addEventListener ("click", function() {
+    againButton.addEventListener("click", function() {
         playable = true
+        clearDone = true
         roundTwo = false
         roundThree = false
         p1Points = 0
@@ -438,5 +454,4 @@ const winnerWinner = () => {
         winWin.innerText = "YAY A TIE!"
     }
 }
-
 
