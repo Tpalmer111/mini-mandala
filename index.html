@@ -12,19 +12,28 @@
             <div class="title">
                 <h1>Mini-Mandala</h1>
                 <p>A color coded card game of art, skill, and chance.</p>
+                <div class="myDIV">How to play</div>
+                <div class="hide">
+                    <h2>How to play</h2>
+                    <P>Click a player card to begin the game, this places a card in the play field. After the player takes a turn, the cpu plays a card in the fiield. These P1 cards are recorded in the bottom row and the cpu cards in the upper row. Both rows are totaled together by color. If all four colors have at least two cards in the field, the next phase begins. Start the clear phase by clicking one of the colors in the lower field, once all colors are chosen the next round restarts the process. There will be three rounds total. During the clear phase the player always gets to choose first, but the cpu will take two colors on the second round, and three colors on the third round. Good Luck!</p>
+
+                    <p>Tip: pick yellow and green first, and blue over red.</p>
+                    
+                    <p>Tip: make sure yeloow is actually worth more than green.</P>
+                </div>
             </div>
-            <div class=" skulls CPU-score flex-row flex-center">
-                <div class="square-2" id="one-point-CPU">1 pt</div>
-                <div class="square-2" id="two-point-CPU">2 pt</div>
-                <div class="square-2" id="three-point-CPU">3 pt</div>
-                <div class="square-2" id="four-point-CPU">4 pt</div> 
+            <div class="cpu-score flex-row flex-center">
+                <div class="square-2" id="one-point-cpu">1 pt</div>
+                <div class="square-2" id="two-point-cpu">2 pt</div>
+                <div class="square-2" id="three-point-cpu">3 pt</div>
+                <div class="square-2" id="four-point-cpu">4 pt</div> 
  
             </div>
-            <div class="field-CPU flex-row flex-center">
-                <div class="square" id="CPUred-box">0</div>
-                <div class="square" id="CPUblue-box">0</div>
-                <div class="square" id="CPUgreen-box">0</div>
-                <div class="square" id="CPUyellow-box">0</div> 
+            <div class="field-cpu flex-row flex-center">
+                <div class="square" id="cpured-box">0</div>
+                <div class="square" id="cpublue-box">0</div>
+                <div class="square" id="cpugreen-box">0</div>
+                <div class="square" id="cpuyellow-box">0</div> 
             </div>
 
             <div class="field flex-row flex-center">
@@ -55,13 +64,16 @@
                 <div id="p1-endgame">
                     <div id="p1Display"></div>
                 </div>
-                <div id="CPU-endgame">
-                    <div id="CPUDisplay"></div>
+                <div id="cpu-endgame">
+                    <div id="cpuDisplay"></div>
                 </div>
                
                
             </div>
-            <div class="rect again"></div>
+            <div class="rect again">
+               
+                    
+            </div>
       
             <script src="./script.js"></script>
     </body>

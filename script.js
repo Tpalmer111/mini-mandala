@@ -12,11 +12,11 @@ const blueBox = document.querySelector("#blue-box")
 const greenBox = document.querySelector("#green-box")
 const yellowBox = document.querySelector("#yellow-box")
 
-// vars for getting the boxes in the CPU field by id
-const CPUredBox = document.querySelector("#CPUred-box")
-const CPUblueBox = document.querySelector("#CPUblue-box")
-const CPUgreenBox = document.querySelector("#CPUgreen-box")
-const CPUyellowBox = document.querySelector("#CPUyellow-box")
+// vars for getting the boxes in the cpu field by id
+const cpuredBox = document.querySelector("#cpured-box")
+const cpublueBox = document.querySelector("#cpublue-box")
+const cpugreenBox = document.querySelector("#cpugreen-box")
+const cpuyellowBox = document.querySelector("#cpuyellow-box")
 
 // vars for getting the boxes for the player point by id
 const p1OnePoint = document.querySelector("#one-point-p1")
@@ -24,16 +24,16 @@ const p1TwoPoint = document.querySelector("#two-point-p1")
 const p1ThreePoint = document.querySelector("#three-point-p1")
 const p1FourPoint = document.querySelector("#four-point-p1")
 
-// vars for getting the boxes for the CPU point by id
-const CPUOnePoint = document.querySelector("#one-point-p1")
-const CPUTwoPoint = document.querySelector("#two-point-p1")
-const CPUThreePoint = document.querySelector("#three-point-p1")
-const CPUFourPoint = document.querySelector("#four-point-p1")
+// vars for getting the boxes for the cpu point by id
+const cpuOnePoint = document.querySelector("#one-point-p1")
+const cpuTwoPoint = document.querySelector("#two-point-p1")
+const cpuThreePoint = document.querySelector("#three-point-p1")
+const cpuFourPoint = document.querySelector("#four-point-p1")
 
 // var for the score display row by id
 const winWin = document.querySelector("#win")
 const p1Display = document.getElementById("p1-endgame")
-const CPUDisplay = document.getElementById("CPU-endgame")
+const cpuDisplay = document.getElementById("cpu-endgame")
 
 const click = document.querySelector("#click")
 const here = document.querySelector("#here")
@@ -44,11 +44,11 @@ let blueTally = 0
 let greenTally = 0
 let yellowTally = 0
 
-// vars to track colors in the CPU field
-let CPUredTally = 0
-let CPUblueTally = 0
-let CPUgreenTally = 0
-let CPUyellowTally = 0
+// vars to track colors in the cpu field
+let cpuredTally = 0
+let cpublueTally = 0
+let cpugreenTally = 0
+let cpuyellowTally = 0
 
 // vars to track the pointes by color collected by the player
 let playerOneRed = 0
@@ -56,15 +56,15 @@ let playerOneBlue = 0
 let playerOneGreen = 0
 let playerOneYellow = 0
 
-// vars to track the pointes by color collected by the CPU
-let CPURed = 0
-let CPUBlue = 0
-let CPUGreen = 0
-let CPUYellow = 0
+// vars to track the pointes by color collected by the cpu
+let cpuRed = 0
+let cpuBlue = 0
+let cpuGreen = 0
+let cpuYellow = 0
 
-// vard to track total points per player and CPU
+// vard to track total points per player and cpu
 let p1Points = 0
-let CPUPoints = 0
+let cpuPoints = 0
 
 // picks a random color
 const colorPicker = () => {
@@ -82,17 +82,17 @@ const colorPicker = () => {
 
 // changes the background color of both rows of point boxes
 const scoreCards = () => {
-    document.querySelector("#one-point-CPU").style.backgroundColor = "yellow"
-    document.querySelector("#two-point-CPU").style.backgroundColor = "green"
-    document.querySelector("#three-point-CPU").style.backgroundColor = "blue"
-    document.querySelector("#four-point-CPU").style.backgroundColor = "red"
+    document.querySelector("#one-point-cpu").style.backgroundColor = "yellow"
+    document.querySelector("#two-point-cpu").style.backgroundColor = "green"
+    document.querySelector("#three-point-cpu").style.backgroundColor = "blue"
+    document.querySelector("#four-point-cpu").style.backgroundColor = "red"
     document.querySelector("#one-point-p1").style.backgroundColor = "red"
     document.querySelector("#two-point-p1").style.backgroundColor = "blue"
     document.querySelector("#three-point-p1").style.backgroundColor = "green"
     document.querySelector("#four-point-p1").style.backgroundColor = "yellow"  
     
     p1Display.innerText = "PLAYER SCORE:    " + p1Points
-    CPUDisplay.innerText = "CPU SCORE:  " + CPUPoints
+    cpuDisplay.innerText = "cpu SCORE:  " + cpuPoints
     winWin.innerText = "ROUND ONE: pick a card"
 
 }
@@ -129,7 +129,7 @@ cardsRefresh()
 // var to track if the player cards are able to be played
 let playable = true
 
-// initiates the player moves, CPU moves, and triggers phase-two
+// initiates the player moves, cpu moves, and triggers phase-two
 const playersMoves = (e) => {
     // checks that the player is allowed to play a card
     if (!playable) {
@@ -175,23 +175,23 @@ const playersMoves = (e) => {
         phaseTwo()
         return
     } else {
-        // picks a random color for the CPU turn and keeps count in the CPU field
+        // picks a random color for the cpu turn and keeps count in the cpu field
         switch(colorPicker()) {
             case "red":
-                CPUredTally++
-                CPUredBox.innerText = CPUredTally
+                cpuredTally++
+                cpuredBox.innerText = cpuredTally
                 break
             case "blue":
-                CPUblueTally++
-                CPUblueBox.innerText = CPUblueTally
+                cpublueTally++
+                cpublueBox.innerText = cpublueTally
                 break
             case "green":
-                CPUgreenTally++
-                CPUgreenBox.innerText = CPUgreenTally
+                cpugreenTally++
+                cpugreenBox.innerText = cpugreenTally
                 break
             case "yellow":
-                CPUyellowTally++
-                CPUyellowBox.innerText = CPUyellowTally
+                cpuyellowTally++
+                cpuyellowBox.innerText = cpuyellowTally
                 break
         }  
     }
@@ -210,38 +210,38 @@ cardTwo.addEventListener("click", playersMoves)
 cardThree.addEventListener("click", playersMoves)
 cardFour.addEventListener("click", playersMoves)
 
-// keeps track of the red cards in both the CPU and Player fields
+// keeps track of the red cards in both the cpu and Player fields
 const calcRedTotal = () => {
     let x = redTally
-    let y = CPUredTally
+    let y = cpuredTally
     let totalRed = (x + y)
     return totalRed
 }
 
-// keeps track of the bliue cards in both the CPU and Player fields
+// keeps track of the bliue cards in both the cpu and Player fields
 const calcBlueTotal = () => {
     let x = blueTally
-    let y = CPUblueTally
+    let y = cpublueTally
     let totalBlue = (x + y)
     return totalBlue 
 }
 
-// keeps track of the green cards in both the CPU and Player fields
+// keeps track of the green cards in both the cpu and Player fields
 const calcGreenTotal = () => {
     let x = greenTally
-    let y = CPUgreenTally
+    let y = cpugreenTally
     let totalGreen = (x + y)
     return totalGreen 
 }
 
-// keeps track of the yellow cards in both the CPU and Player fields
+// keeps track of the yellow cards in both the cpu and Player fields
 const calcYellowTotal = () => {
     let x = yellowTally
-    let y = CPUyellowTally
+    let y = cpuyellowTally
     let totalYellow = (x + y)
     return totalYellow 
 }
-// dissables player card clicks, initiates phase-two, player and CPU moves
+// dissables player card clicks, initiates phase-two, player and cpu moves
 const phaseTwo = () => {
     playable = false
     click.innerText = "CLICK >"
@@ -296,18 +296,18 @@ const phaseTwo = () => {
                 cleanYellow()
                 break
         }
-        // controls and records the CPU choice and then clears the values
+        // controls and records the cpu choice and then clears the values
         if (r > 0) {
-            CPURed += r
+            cpuRed += r
             cleanRed()
         } else if (b > 0) {
-            CPUBlue += b
+            cpuBlue += b
             cleanBlue()
         } else if (g > 0) {
-            CPUGreen += g
+            cpuGreen += g
             cleanGreen()
         } else if (y > 0) {
-            CPUYellow += y
+            cpuYellow += y
             cleanYellow()
         }
         // checks to see if all colors have been chosen
@@ -336,8 +336,8 @@ listeners()
     const cleanRed = () => {
         redTally = 0
         redBox.innerText = redTally
-        CPUredTally = 0
-        CPUredBox.innerText = CPUredTally
+        cpuredTally = 0
+        cpuredBox.innerText = cpuredTally
         calcRedTotal()
     }
 
@@ -345,8 +345,8 @@ listeners()
     const cleanBlue = () => {
         blueTally = 0
         blueBox.innerText = blueTally
-        CPUblueTally = 0
-        CPUblueBox.innerText = CPUblueTally
+        cpublueTally = 0
+        cpublueBox.innerText = cpublueTally
         calcBlueTotal()
     }
 
@@ -354,8 +354,8 @@ listeners()
     const cleanGreen = () => {
         greenTally = 0
         greenBox.innerText = greenTally
-        CPUgreenTally = 0
-        CPUgreenBox.innerText = CPUgreenTally
+        cpugreenTally = 0
+        cpugreenBox.innerText = cpugreenTally
         calcGreenTotal()
     }
 
@@ -363,8 +363,8 @@ listeners()
     const cleanYellow = () => {
         yellowTally = 0
         yellowBox.innerText = yellowTally
-        CPUyellowTally = 0
-        CPUyellowBox.innerText = CPUyellowTally
+        cpuyellowTally = 0
+        cpuyellowBox.innerText = cpuyellowTally
         calcYellowTotal()
     }
 }
@@ -401,10 +401,10 @@ const scoreItUp = () => {
     let x = playerOneGreen
     let w = playerOneYellow
 
-    let zz = CPURed
-    let yy = CPUBlue
-    let xx = CPUGreen
-    let ww = CPUYellow
+    let zz = cpuRed
+    let yy = cpuBlue
+    let xx = cpuGreen
+    let ww = cpuYellow
 
     y = y * 2
     x = x * 3
@@ -415,10 +415,10 @@ const scoreItUp = () => {
     zz = zz * 4
 
     p1Points += (z + y + x + w)
-    CPUPoints += (ww + xx + yy + zz)
+    cpuPoints += (ww + xx + yy + zz)
 
     p1Display.innerText = "PLAYER SCORE:    " + p1Points
-    CPUDisplay.innerText = "CPU SCORE:  " + CPUPoints
+    cpuDisplay.innerText = "cpu SCORE:  " + cpuPoints
 }
 
 // determines the winner and displays endgame text
@@ -439,18 +439,18 @@ const winnerWinner = () => {
         roundTwo = false
         roundThree = false
         p1Points = 0
-        CPUPoints = 0
+        cpuPoints = 0
         winWin.innerText = "ROUND ONE: pick a card"
         p1Display.innerText = "PLAYER SCORE:    " + p1Points
-        CPUDisplay.innerText = "CPU SCORE:  " + CPUPoints
+        cpuDisplay.innerText = "cpu SCORE:  " + cpuPoints
         againButton.innerText = ""
         cardsRefresh()
 })
-    if (p1Points > CPUPoints){
+    if (p1Points > cpuPoints){
         winWin.innerText = "YOU WIN!"
-    } else if (p1Points < CPUPoints) {
+    } else if (p1Points < cpuPoints) {
         winWin.innerText = "YOU LOSE!"
-    } else if (p1Points === CPUPoints) {
+    } else if (p1Points === cpuPoints) {
         winWin.innerText = "YAY A TIE!"
     }
 }

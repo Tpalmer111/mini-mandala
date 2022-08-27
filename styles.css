@@ -12,12 +12,12 @@ body {
 
 p {
     font-size: medium;
-    font-family: Bungee Shade;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
     background: transparent;
-    height: 105px;
+    height: 150px;
     border: .15em solid darkslateblue;
     text-align: center;
     font-family: Bungee Shade;
@@ -31,7 +31,7 @@ p {
  
 }
 
-.CPU-score {
+.cpu-score {
     background: transparent;
     height: 12vh;
     border: .15em solid darkslateblue;
@@ -41,7 +41,7 @@ p {
     color: black; 
 }
 
-.field-CPU {
+.field-cpu {
     background: transparent;
     height: 10vh;
     border: .15em solid darkslateblue;
@@ -135,25 +135,25 @@ p {
     color: black; 
 }
 
-#red-box, #CPUred-box {
+#red-box, #cpured-box {
     background-color: red;
     font-family: Bungee Shade;
     color: black; 
 }
 
-#blue-box, #CPUblue-box {
+#blue-box, #cpublue-box {
     background-color: blue;
     font-family: Bungee Shade;
     color: black; 
 }
 
-#green-box, #CPUgreen-box {
+#green-box, #cpugreen-box {
     background-color: green;
     font-family: Bungee Shade;
     color: black; 
 }
 
-#yellow-box, #CPUyellow-box {
+#yellow-box, #cpuyellow-box {
     background-color: yellow;
     font-family: Bungee Shade;
     color: black; 
@@ -185,3 +185,15 @@ p {
     color: black; 
     font-size: medium;
 }
+
+.hide {
+    display: none;
+  }
+  
+  .myDIV:hover + .hide {
+    display: block;
+    color: whitesmoke;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 9;
+  }
